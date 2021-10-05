@@ -17,7 +17,6 @@ html, body {
 }
 
 body {
-    background-color: lightgray;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
@@ -37,7 +36,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem auto 0 auto ;
+    margin: 1rem auto 5rem auto ;
 }
 
 nav .logo {
@@ -51,6 +50,8 @@ nav .logo img {
 
 nav .links {
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav .links ul {
@@ -65,6 +66,28 @@ nav .links ul li {
     text-decoration: none;
 }
 
+@media screen and (max-width: 360px) {
+    nav .logo {
+        width: 35%;
+    }
+
+    nav .links ul {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 305px) {
+    nav .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav .links {
+        display: none;
+    }
+}
+
 /* Main or Hero section styling */
 main {
     width: 85%;
@@ -72,11 +95,13 @@ main {
     display: flex;
     gap: 2rem;
     flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
 }
 
 /* */
 .illustration {
-    width: 100%;
+    width: 85%;
 }
 
 .illustration img {
@@ -116,13 +141,10 @@ input[type=email]::placeholder {
     color: var(--desat-blue);
 }
 
-main .description
-
 main .description div > label {
     width: 100%;
     margin: auto;
     text-align: center;
-    background-color: red;
 }
 
 /*  */
@@ -144,16 +166,26 @@ section {
     flex-direction: column;
 }
 
-section > * {
+section > * > * {
     width: 85%;
     margin: auto;
 }
 
 /* Stay Productive section styling */
 .productivity {
+    background-image: url("../assets/images/bg-curve-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
     display: flex;
     gap: 5rem;
     flex-direction: column;
+}
+
+.productivity .content {
+    background-color:#F8F8FE;
+    margin-top: 3.3rem;
+    padding-top: 2rem;
 }
 
 .productivity .stay {
@@ -175,13 +207,18 @@ section > * {
 }
 
 .productivity .stay > div:nth-child(1) a {
-    background-color: lightcyan;
+    color: var(--moderate-cyan);
     text-align: center;
-    /* text-decoration: underline; */
     display: flex;
     gap: .5rem;
+    justify-content: center;
     align-items: center;
+    padding-top: 1rem;
+}
+
+.productivity .stay > div:nth-child(1) a > span {
     padding-bottom: .5rem;
+    border-bottom: 1px solid var(--moderate-cyan);
 }
 
 .productivity .stay > div + div {
@@ -189,6 +226,9 @@ section > * {
     display: grid;
     border-radius: .5rem;
     padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 5rem;
 }
 
 .productivity .stay div + div > div img {
@@ -226,7 +266,7 @@ section > * {
     text-align: center;
     display: grid;
     row-gap: 1rem;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
 }
 
 .access h2 {
@@ -235,18 +275,23 @@ section > * {
 }
 
 .access > div + div {
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: grid;
     row-gap: .5rem;
 }
 
+.access > div + div > a {
+    width: 85%;
+}
+
 /* Footer section styling */
 footer {
-    color: var(--desat-blue);
+    color: rgba(255, 255, 255, .7);
     background-color: var(--darker-blue);
     display: grid;
     gap: 2rem;
+    padding-top: 1rem;
 }
 
 footer > * {
@@ -259,7 +304,7 @@ footer li {
 }
 
 footer a {
-    color: var(--desat-blue);
+    color: rgba(255, 255, 255, .7);
 }
 
 .footer {
@@ -284,7 +329,6 @@ footer a {
 }
 
 .footer .socials {
-    background-color: greenyellow;
     text-align: center;
 }
 
@@ -300,10 +344,10 @@ footer a {
 }
 
 .footer .socials .fab {
-    color: var(--desat-blue);
+    color: rgba(255, 255, 255, .7);
     display: grid;
     place-items: center;
-    border: 1px solid var(--desat-blue);
+    border: 1px solid rgba(255, 255, 255, .7);
     border-radius: 50%;
     padding: 1rem;
 }
@@ -315,4 +359,184 @@ footer .attribution {
 
 footer .attribution a { 
     color: var(--moderate-cyan);
+}
+
+@media screen and (min-width: 1200px) {
+    /* Navbar Styling */
+    nav {
+        width: min(85%, 75rem);
+    }
+
+    nav .links {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav .links ul {
+        width: 50%;
+    }
+
+    /* Main or Hero section styling */
+    main {
+        width: 85%;
+        margin: auto;
+        display: flex;
+        gap: 2rem;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    main .description {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        row-gap: 1.5rem;
+    }
+
+    main .description h1 {
+        text-align: left;
+        line-height: 1.5;
+        font-size: 2rem;
+    }
+
+    main .description p {
+        text-align: left;
+    }
+
+    main .description > div {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    main .description > div > input {
+        width: 55%;
+    }
+
+    main .description > div > label > a {
+        width: 75%;
+        text-align: center;
+    }
+
+    main .description div > label {
+        width: 45%;
+    }
+
+    section > * {
+        width: min(85%, 75rem);
+        margin: auto;
+    }
+
+    .productivity {
+        background-image: url("../assets/images/bg-curve-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top center;
+        display: flex;
+        gap: 5rem;
+        flex-direction: column;
+    }
+
+    .productivity .content {
+        width: 100%;
+        background-color:#F8F8FE;
+        margin-top: 5rem;
+        padding-top: 2rem;
+    }
+
+    .productivity .content > div {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .productivity .content > * {
+        width: min(85%, 75rem);
+        margin: auto;
+    }
+
+    .productivity .content > img {
+        width: 30%;
+    }
+
+    .productivity .stay {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .productivity .stay h1 {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .productivity .stay div > h1 ~ p {
+        color: var(--desat-blue);
+        font-size: .8rem;
+        margin-bottom: 1rem;
+        padding-right: 5rem;
+    }
+
+    .productivity .stay > div:nth-child(1) a  {
+        justify-content: flex-start;
+    }
+
+    .productivity .stay > div + div {
+        width: 50%;
+        font-size: .7rem;
+    }
+
+    /* Get early access section styling */
+    .access {
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .access h2 {
+        font-size: 1.8rem;
+    }
+
+    .access > div + div {
+        row-gap: 1rem;
+    }
+
+    .access > div + div > a {
+        width: 40%;
+        text-align: center;
+        margin-left: 8%;
+    }
+
+    footer > * {
+        width: min(85%, 75rem);
+    }
+
+    .footer {
+        display: grid;
+        row-gap: 0rem;
+        align-items: baseline;
+        padding-top: 3rem;
+    }
+
+    .footer > img {
+        grid-column: 1/5;
+    }
+
+    .footer > div:nth-child(2) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .footer > div:nth-child(3) {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .footer > div:nth-child(4) {
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+
 }

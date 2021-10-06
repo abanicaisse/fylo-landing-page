@@ -45,7 +45,7 @@ nav .logo {
 
 nav .logo img {
     transform: scale(.5);
-    margin-left: -2rem;
+    margin-left: -2.5rem;
 }
 
 nav .links {
@@ -156,6 +156,11 @@ main .description div > label {
     text-decoration: none;
     padding: .5rem;
 }
+
+.start-btn:hover {
+    background-color: var(--bright-blue);
+    opacity: .8;
+}
 /*  */
 
 section {
@@ -184,8 +189,24 @@ section > * > * {
 
 .productivity .content {
     background-color:#F8F8FE;
-    margin-top: 3.3rem;
+    margin-top: 3.2rem;
     padding-top: 2rem;
+}
+
+@media screen and (max-width: 360px) {
+    .productivity .content {
+        background-color:#F8F8FE;
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 225px) {
+    .productivity .content {
+        background-color:#F8F8FE;
+        margin-top: 1.5rem;
+        padding-top: 2rem;
+    }
 }
 
 .productivity .stay {
@@ -216,9 +237,17 @@ section > * > * {
     padding-top: 1rem;
 }
 
+.productivity .stay > div:nth-child(1) a:hover {
+    opacity: 0.8;
+}
+
 .productivity .stay > div:nth-child(1) a > span {
     padding-bottom: .5rem;
     border-bottom: 1px solid var(--moderate-cyan);
+}
+
+.productivity .stay > div:nth-child(1) a > span:hover {
+    opacity: 0.8;
 }
 
 .productivity .stay > div + div {
@@ -269,20 +298,26 @@ section > * > * {
     padding: 5rem 1rem;
 }
 
-.access h2 {
+.access .a-content {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.access .a-content h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.access > div + div {
+.access .a-content > div + div {
     width: 100%;
     margin: auto;
     display: grid;
     row-gap: .5rem;
 }
 
-.access > div + div > a {
-    width: 85%;
+.access .a-content > div + div > a {
+    display: block;
+    width: 100%;
 }
 
 /* Footer section styling */
@@ -313,12 +348,17 @@ footer a {
     padding-top: 3rem;
 }
 
-.footer img + div {
+.footer svg {
+    transform: scale(.7);
+    margin-left: -2rem;
+}
+
+.footer svg + div {
     display: grid;
     row-gap: 1rem;
 }
 
-.footer img + div > p {
+.footer svg + div > p {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -362,7 +402,7 @@ footer .attribution a {
 }
 
 @media screen and (min-width: 1200px) {
-    /* Navbar Styling */
+    /* Navbar media querry */
     nav {
         width: min(85%, 75rem);
     }
@@ -377,14 +417,15 @@ footer .attribution a {
         width: 50%;
     }
 
-    /* Main or Hero section styling */
+    /* Main or Hero section media querry */
     main {
-        width: 85%;
+        width: min(85%, 75rem);
         margin: auto;
         display: flex;
         gap: 2rem;
         flex-direction: row-reverse;
         align-items: center;
+        margin-bottom: 5rem;
     }
 
     main .description {
@@ -427,6 +468,7 @@ footer .attribution a {
         margin: auto;
     }
 
+    /* productivity section media querry  */
     .productivity {
         background-image: url("../assets/images/bg-curve-desktop.svg");
         background-repeat: no-repeat;
@@ -486,29 +528,38 @@ footer .attribution a {
     .productivity .stay > div + div {
         width: 50%;
         font-size: .7rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
     }
 
-    /* Get early access section styling */
-    .access {
+    /* Get early access section media querry */
+    .access .a-content {
+        width: min(85%, 75rem);
+        margin: auto;
         text-align: left;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
     }
 
     .access h2 {
         font-size: 1.8rem;
     }
 
-    .access > div + div {
+    .access .a-content > div:first-child {
+        margin-left: 0;
+    }
+
+    .access .a-content > div + div {
         row-gap: 1rem;
     }
 
-    .access > div + div > a {
+    .access .a-content  > div + div > a {
         width: 40%;
         text-align: center;
-        margin-left: 8%;
     }
 
+    /* footer section media querry */
     footer > * {
         width: min(85%, 75rem);
     }
@@ -520,7 +571,7 @@ footer .attribution a {
         padding-top: 3rem;
     }
 
-    .footer > img {
+    .footer > svg {
         grid-column: 1/5;
     }
 
